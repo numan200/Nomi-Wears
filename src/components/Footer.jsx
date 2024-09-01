@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logoImg from "../images/logo.png";
+import logoImg from "../assets/logo.png";
 import { useEffect, useState } from "react";
 // Import Tooltip directly from Bootstrap
 import { Tooltip } from "bootstrap"; 

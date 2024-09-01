@@ -2,26 +2,26 @@ import { useNavigate } from "react-router-dom";
 
 
 const CollectionCard = ({
-	data: { id, image, name, price }, // Destructure product data props
+	data: { _id, image, name, price }, // Destructure product data props
 	// imageNotDeirect,                  // Conditional flag for image path
 	classFlex                         // Additional CSS classes for layout flexibility
 	
 }) => {
 	const navigate = useNavigate();   // Hook to programmatically navigate to product details
 
-
+	
 
 	return (
 		<div
 			className={`collection-card trans-3 p-2 border-0 card box-shadow-gray ${classFlex}`}
 			role="button"
-			onClick={() => navigate(`/products/${id}`)}                  // Navigate to product details on click
+			onClick={() => navigate(`/products/${_id}`)}                  // Navigate to product details on click
 			data-aos={"fade-up"}
 		>
 			<figure className="overflow-hidden rounded">
 				<img
-					// src={`${imageNotDeirect ? "." : ""}${image[0]}`}     // Conditionally prepend '.' to the image path
 					src={image[0]}     // Conditionally prepend '.' to the image path
+					// src={`isNotDirect? ${image[0]}}     // Conditionally prepend '.' to the image path
 					alt={name}
 					className="card-img rounded mx-h-300 trans-3 img-scall"
 				/>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import mainImg from "../images/contact_img.webp";
+import mainImg from "../assets/contact_img.webp";
 import DescribedImage from "../components/DescribedImage";
 import SubscriptionForm from "../components/SubscriptionForm";
 import HeaderDashed from "../components/HeaderDashed";

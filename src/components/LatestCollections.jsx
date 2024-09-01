@@ -25,7 +25,7 @@ const LatestCollections = ({ data, loading, errorInFetch }) => {
 						b = b.id;
 						return a > b? 1 : a < b? -1 : 0
 					}).slice(0,10).map((product) => (
-							<CollectionCard key={product.id} data={product} />
+							<CollectionCard key={product._id} data={product} />
 						))
 				)}
 			</main>

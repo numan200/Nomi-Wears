@@ -6,14 +6,14 @@ import LatestCollections from "../components/LatestCollections";
 import { motion } from "framer-motion";
 
 // Import Slider Images
-import homeImage from "../images/hero_img.png";
-import conatctImg from "../images/contact_img.webp";
-import aboutImg from "../images/about_img.png";
+import homeImage from "../assets/hero_img.png";
+import conatctImg from "../assets/contact_img.webp";
+import aboutImg from "../assets/about_img.png";
 
 // Import Features Images
-import exhangeImg from "../images/download-f.png";
-import qualityImg from "../images/quality_icon.png";
-import supportImg from "../images/download-set.png";
+import exhangeImg from "../assets/download-f.png";
+import qualityImg from "../assets/quality_icon.png";
+import supportImg from "../assets/download-set.png";
 
 
 

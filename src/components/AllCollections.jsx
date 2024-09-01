@@ -4,6 +4,8 @@ import FetchWaitingMsg from "./FetchWaitingMsg";
 import HeaderDashed from "./HeaderDashed";
 
 const AllCollections = ({ data, loading, errorInFetch }) => {
+	console.log(data);
+	
 	return (
 		<section
 			id="all-collections"

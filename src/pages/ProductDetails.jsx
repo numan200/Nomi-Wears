@@ -6,70 +6,97 @@ import HeaderDashed from "../components/HeaderDashed";
 import FetchErrorMsg from "../components/FetchErrorMsg";
 import FetchWaitingMsg from "../components/FetchWaitingMsg";
 
+
+
+// Dummy Fixed Data:
+import productsData from "../components/FixedData";
+
+
 import { motion } from "framer-motion";
 
 const ProductDetails = () => {
-	const { productId } = useParams();
-
+	const {productId} = useParams();
+	// ;
+	// useEffect(() => console.log(productId), [productId])
+	
+	
 	const [productData, setProductData] = useState(null);
 	const [loading, setLoading] = useState(true);
-	const [fetchingError, setFetchingError] = useState(null);
+	// const [fetchingError, setFetchingError] = useState(null);
 	const [activeSize, setActiveSize] = useState(null);
 	const [activeImage, setActiveImage] = useState(0);
 	const [allFetchedData, setAllFetchedData] = useState([]);
+	
+	useEffect(() => {
+		setAllFetchedData(productsData);  // all products
+		let data = productsData.find(obj => obj._id == productId);
+		data = {...data, rating: {stars: 4.5, count: 122}};
+		setProductData(data);             // the selected product
+		setLoading(false);
+	}, [productId]);
+
 
 	// Function to find related products based on category
 	const findRelatedProducts = () => {
 		if (!productData || !allFetchedData.length) {
 			return <h1 className="text-center my-5">Loading...</h1>;
 		}
+		
 		const relatedProducts = allFetchedData.filter(
 			(product) =>
-				product.category === productData.category &&
-				product.id !== productData.id
+				product.category === productData.category && product._id != productData._id
 		);
+		
 		return (
 			<main className="d-flex row-gap-3 flex-wrap mt-4">
 			{relatedProducts.slice(0,5).map((pro,i) => {
-								return <CollectionCard key={i} data={pro} imageNotDeirect="true"/>
+								return <CollectionCard key={i} data={pro}/>
 							})}
 			</main>
 		)
 	};
-	console.log(findRelatedProducts());
+	// console.log(findRelatedProducts());
 
-	console.log(productData);
+	// console.log(productData);
 
-	useEffect(() => {
-		// Fetch all products for finding related products
-		fetch("http://localhost:3000/products")
-			.then((res) => res.json())
-			.then((json) => setAllFetchedData(json))
-			.catch((error) =>
-				console.error("Error fetching related products:", error)
-			);
-	}, []);
+	// useEffect(() => {
+	// 	// Fetch all products for finding related products
+	// 	fetch("http://localhost:3000/products")
+	// 		.then((res) => res.json())
+	// 		.then((json) => setAllFetchedData(json))
+	// 		.catch((error) =>
+	// 			console.error("Error fetching related products:", error)
+	// 		);
+	// }, []);
 
-	useEffect(() => {
-		// Fetch specific product details based on productId
-		fetch(`http://localhost:3000/products/${productId}`)
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error("Network response was not ok");
-				}
-				return res.json();
-			})
-			.then((json) => {
-				json.rating = { count: 112, stars: 4 };   // Adding sample rating data
-				setProductData(json);
-				setLoading(false);
-				setActiveImage(0);
-			})
-			.catch((error) => {
-				setFetchingError(error);
-				setLoading(false);
-			});
-	}, [productId]);
+
+
+
+
+	// useEffect(() => {
+	// 	// allFetchedData.filter(obj => )
+	// 	// Fetch specific product details based on productId
+	// 	fetch(`http://localhost:3000/products/${productId}`)
+	// 		.then((res) => {
+	// 			if (!res.ok) {
+	// 				throw new Error("Network response was not ok");
+	// 			}
+	// 			return res.json();
+	// 		})
+	// 		.then((json) => {
+	// 			json.rating = { count: 112, stars: 4 };   // Adding sample rating data
+	// 			setProductData(json);
+	// 			setLoading(false);
+	// 			setActiveImage(0);
+	// 		})
+	// 		.catch((error) => {
+	// 			setFetchingError(error);
+	// 			setLoading(false);
+	// 		});
+	// }, [productId]);
+
+
+
 
 	return (
 		<motion.section
@@ -80,9 +107,8 @@ const ProductDetails = () => {
 		>
 			{loading ? (
 				<FetchWaitingMsg />
-			) : fetchingError ? (
-				<FetchErrorMsg />
-			) : (
+			)  
+			: (
 				<div className="container mt-5">
 					<main className="product-wrapper d-flex gap-3 gap-lg-5 flex-wrap align-items-start">
 						{/* Product Images */}
@@ -210,7 +236,7 @@ const ProductDetails = () => {
 				</div>
 			)}
 		</motion.section>
-	);
+	)
 };
 
 export default ProductDetails;

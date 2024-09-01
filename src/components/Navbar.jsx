@@ -1,5 +1,5 @@
 // Import Image
-import logo from "../images/logo.png";
+import logo from "../assets/logo.png";
 // Import React Router and React
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
@@ -65,7 +65,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							onClick={() => setShowMenu((prev) => !prev)}
-							className="text-decoration-none c-gray fw-bold p-4 py-2 d-block border-bottom"
+							className="admin-panel-btn btn  rounded-pill bg- text-decoration-none c-gray p-3 py-2 ms-1 d-block border-gray"
 							to="/admin-panel"
 						>
 							ADMIN PANEL

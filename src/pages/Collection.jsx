@@ -14,7 +14,7 @@ const Collection = () => {
 	// State to manage loading status
 	const [loading, setLoading] = useState(true);
 	// State to handle fetch errors
-	const [errorInFetch, setErrorInFetch] = useState(null);
+	// const [errorInFetch, setErrorInFetch] = useState(null);
 
 
 
@@ -46,7 +46,8 @@ const Collection = () => {
 					<FiltersSidebar />
 
 					{/* Display all collections with the fetched data */}
-					<AllCollections data={data} loading={loading} errorInFetch={errorInFetch} />
+					<AllCollections data={data} loading={loading} />
+					{/* <AllCollections data={data} loading={loading} errorInFetch={errorInFetch} /> */}
 				</div>
 			</div>
 		</motion.div>

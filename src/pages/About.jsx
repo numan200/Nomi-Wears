@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import HeaderDashed from "../components/HeaderDashed";
-import mainImg from "../images/about_img.png";
+import mainImg from "../assets/about_img.png";
 import SubscriptionForm from "../components/SubscriptionForm";
 import DescribedImage from "../components/DescribedImage";
 

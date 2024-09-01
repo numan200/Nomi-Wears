@@ -334,6 +334,17 @@ nav a:not(.logo).active {
     font-size: 1.4rem;
 }
 
+/* Admin Panel Page */
+.admin-panel form {
+	max-width: 500px;
+	margin: auto;
+}
+.admin-panel [for="password"] span:hover,
+.admin-panel [for="password"] span.active {
+	transition: var(--trans-3);
+	color: var(--c-black) !important;
+}
+
 
 
 
@@ -417,7 +428,7 @@ nav a:not(.logo).active {
 		color: var(--c-pink) !important;
 		position: relative;
 	}
-	nav a:not(.logo).active::after {
+	nav a:not(.logo, nav .admin-panel-btn).active::after {
 		position: absolute;
 		content: "";
 		height: 1px;
