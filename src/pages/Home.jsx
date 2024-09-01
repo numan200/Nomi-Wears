@@ -17,14 +17,19 @@ import supportImg from "../images/download-set.png";
 
 
 
+// Dummy Fixed Data:
+import productsData from "../components/FixedData";
 
-const Home = ({ onFetchedData }) => {
+
+const Home = () => {
 	const sliderImages = [homeImage, conatctImg, aboutImg];
 	const [activeSlide, setActiveSlide] = useState(0);
 	const [loading, setLoading] = useState(true);
 	const [errorInFetch, setErrorInFetch] = useState(null);
 	const [data, setData] = useState([]);
 	const featuresImgs = [exhangeImg, qualityImg, supportImg];
+
+
 
 	// Auto-slide functionality for the image slider
 	useEffect(() => {
@@ -39,17 +44,21 @@ const Home = ({ onFetchedData }) => {
 
 	// Fetch data for collections
 	useEffect(() => {
-		fetch("http://localhost:3000/products")
-			.then((res) => res.json())
-			.then((json) => {
-				setData(json);
-				setLoading(false);
-			})
-			.catch((error) => {
-				setErrorInFetch(error);
-				setLoading(false);
-			});
-	}, [onFetchedData]);
+		// fetch("https://ahmed-maher77.github.io/Forever__Modern-E-Commerce-Web-Application-with-ReactJS-and-Bootstrap/db.json/products")      // http://localhost:3000/products
+		// 	.then((res) => res.json())
+		// 	.then((json) => {
+		// 		console.log('from github server', json);
+				
+		// 		setData(json);
+		// 		setLoading(false);
+		// 	})
+		// 	.catch((error) => {
+		// 		setErrorInFetch(error);
+		// 		setLoading(false);
+		// 	});
+		setData(productsData);
+		setLoading(false);
+	}, []);
 
 	return (
 		<motion.section

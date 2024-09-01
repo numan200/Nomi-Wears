@@ -14,6 +14,7 @@ A dynamic and highly optimized e-commerce web application built with HTML5, CSS3
 - **Other Libraries / Tools:** <br>
 Boxicons - Google Fonts
 <br><br>
+
 🌐**Demo (Live Preview):** <a href="" target="_blank"></a> 
 
 <br>
@@ -31,10 +32,9 @@ Boxicons - Google Fonts
 
 <br />
 
-### Setup Instructions:
+## 📥Setup Instructions:
 If you want to download and run this project locally, follow these steps:
-
 - Setup Node Environment: Ensure you have Node.js installed on your PC.
 - Clone the Repository: Navigate to your project folder.
-- Install Dependencies: Run [npm install] in the terminal.
-- Start the Project: Run [npm run dev] in the terminal to start the development server.
+- Install Dependencies: Run <b>npm install</b> in the terminal.
+- Start the Project: Run <b>npm run dev</b> in the terminal to start the development server.

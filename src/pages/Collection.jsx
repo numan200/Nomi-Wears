@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import FiltersSidebar from "../components/FiltersSidebar";
 import AllCollections from "../components/AllCollections";
 
+
+// Dummy Fixed Data:
+import productsData from "../components/FixedData";
+
+
 const Collection = () => {
 	// State to store fetched data
 	const [data, setData] = useState([]);
@@ -11,17 +16,21 @@ const Collection = () => {
 	// State to handle fetch errors
 	const [errorInFetch, setErrorInFetch] = useState(null);
 
+
+
 	// Fetch data on component mount
 	useEffect(() => {
-		fetch("http://localhost:3000/products")
-			.then((res) => res.json())
-			.then((json) => {
-				setData(json);              // Store fetched data
-				setLoading(false);          // Stop loading once data is fetched
-			}).catch(error => {
-				setErrorInFetch(error);     // Handle any errors in fetching
-				setLoading(false);          // Stop loading even if there's an error
-			})
+		// fetch("https://ahmed-maher77.github.io/Forever__Modern-E-Commerce-Web-Application-with-ReactJS-and-Bootstrap/db.json")
+		// 	.then((res) => res.json())
+		// 	.then((json) => {
+		// 		setData(json);              // Store fetched data
+		// 		setLoading(false);          // Stop loading once data is fetched
+		// 	}).catch(error => {
+		// 		setErrorInFetch(error);     // Handle any errors in fetching
+		// 		setLoading(false);          // Stop loading even if there's an error
+		// 	})
+		setData(productsData);
+		setLoading(false);
 	}, []);
 
 	return (
