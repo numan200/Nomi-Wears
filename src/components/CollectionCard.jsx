@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const CollectionCard = ({
 	data: { id, image, name, price }, // Destructure product data props
-	imageNotDeirect,                  // Conditional flag for image path
+	// imageNotDeirect,                  // Conditional flag for image path
 	classFlex                         // Additional CSS classes for layout flexibility
 	
 }) => {
@@ -20,7 +20,8 @@ const CollectionCard = ({
 		>
 			<figure className="overflow-hidden rounded">
 				<img
-					src={`${imageNotDeirect ? "." : ""}${image[0]}`}     // Conditionally prepend '.' to the image path
+					// src={`${imageNotDeirect ? "." : ""}${image[0]}`}     // Conditionally prepend '.' to the image path
+					src={image[0]}     // Conditionally prepend '.' to the image path
 					alt={name}
 					className="card-img rounded mx-h-300 trans-3 img-scall"
 				/>
