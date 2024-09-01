@@ -15,7 +15,7 @@ A dynamic and highly optimized e-commerce web application built with HTML5, CSS3
 Boxicons - Google Fonts
 <br><br>
 
-🌐**Demo (Live Preview):** <a href="" target="_blank"></a> 
+🌐**Demo (Live Preview):** <a href="https://forever-react-ecommerce.netlify.app/" target="_blank">https://forever-react-ecommerce.netlify.app/</a> 
 
 <br>
 
