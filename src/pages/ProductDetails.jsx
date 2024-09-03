@@ -28,6 +28,8 @@ const ProductDetails = () => {
 	const [allFetchedData, setAllFetchedData] = useState([]);
 	
 	useEffect(() => {
+		console.log(productsData[0].image[0]);
+		
 		setAllFetchedData(productsData);  // all products
 		let data = productsData.find(obj => obj._id == productId);
 		data = {...data, rating: {stars: 4.5, count: 122}};
@@ -115,14 +117,14 @@ const ProductDetails = () => {
 						<figure className="d-flex flex-column flex-sm-row-reverse row-gap-3 column-gap-2 col-12 col-sm justify-content-sm-between">
 							<img
 								style={{ maxHeight: "390px" }}
-								src={`.${productData.image[activeImage]}`}
+								src={`${productData.image[activeImage]}`}
 								className="col-12 col-sm-9"
 								alt={productData.name}
 							/>
 							<div className="samples col-2 col-sm d-flex flex-sm-column gap-1">
 								{productData.image.map((img, i) => (
 									<img
-										src={`.${img}`}
+										src={`${img}`}
 										className={`w-100 trans-3 preview-img ${
 											activeImage === i ? "active" : ""
 										}`}
