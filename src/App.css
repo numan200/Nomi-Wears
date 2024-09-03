@@ -26,7 +26,6 @@ body {
 	border-radius: 5px;
 }
 
-
 /*====== Reusable Classes ======*/
 /* colors */
 .bg-black {
@@ -195,31 +194,36 @@ ul {
 	cursor: pointer;
 }
 
-
-
-
 /* Navbar Component */
-nav .container::before {
-    content: "";
-    position: absolute;
-    width: 98%;
-    height: 1px;
-    background-color: var(--c-m-gray);
-    bottom: -17px;
-    left: 1%;
-
+nav {
+	.container::before {
+		content: "";
+		position: absolute;
+		width: 98%;
+		height: 1px;
+		background-color: var(--c-m-gray);
+		bottom: -17px;
+		left: 1%;
+	}
+	ul {
+		transform: translateX(100%);
+		background-color: var(--c-white);
+		width: 100%;
+		height: 100%;
+		transition: var(--trans-3);
+		&.show {
+			transform: translateX(0);
+		}
+		.admin-panel-btn {
+			width: 95%;
+			margin: auto;
+		} 
+	}
+	.login-link.active i {
+		color: var(--c-pink) !important;
+	}
 }
-nav ul {
-	transform: translateX(100%);
-	background-color: var(--c-white);
-	width: 100%;
-	height: 100%;
-	transition: var(--trans-3);
-}
-nav ul.show {
-	transform: translateX(0);
-}
-nav a:not(.logo).active {
+nav ul a.active {
 	background-color: var(--c-black);
 	color: var(--c-white);
 }
@@ -251,7 +255,6 @@ nav a:not(.logo).active {
 	height: 450px !important;
 }
 
-
 /* Collection Card Component */
 .latest-collections main,
 .product-details .related-products main {
@@ -270,13 +273,11 @@ nav a:not(.logo).active {
 	scale: 1.08;
 }
 
-
 /* Subscribe Form Component */
 #subscription-form {
 	max-width: 600px;
 	margin: auto;
 }
-
 
 /* All Collections Component */
 #all-collections .wd-40 {
@@ -286,12 +287,10 @@ nav a:not(.logo).active {
 	font-size: 0.95rem !important;
 }
 
-
 /* Home Page */
 .home-page .features h4 {
 	font-size: 1.15rem;
 }
-
 
 /* ProductDetails Page */
 .size-btns span:hover {
@@ -309,7 +308,6 @@ nav a:not(.logo).active {
 	border-color: var(--c-orange) !important;
 }
 
-
 /* Collection Page */
 .collection-page aside input,
 .collection-page aside label {
@@ -321,7 +319,13 @@ nav a:not(.logo).active {
 .collection-page aside h3 i.active {
 	rotate: 90deg;
 }
-
+.collection-page .nomatch-msg {
+	translate: -50% -50%;
+}
+.collection-page .filters-sidebar label:hover,
+.collection-page .filters-sidebar input:checked + label {
+	font-weight: bold !important;
+}
 
 /* About Page */
 .about-page .mission h4 {
@@ -329,23 +333,28 @@ nav a:not(.logo).active {
 }
 .about-page .choose-us #section-header h2 {
 	justify-content: flex-start !important;
-    font-size: 1.4rem;
+	font-size: 1.4rem;
 }
 
 /* Admin Panel Page */
-.admin-panel form {
-	max-width: 500px;
-	margin: auto;
+.admin-panel,
+.Login-Page {
+	form {
+		max-width: 500px;
+		margin: auto;
+		[for="password"] span:hover,
+		[for="password"] span.active {
+			transition: var(--trans-3);
+			color: var(--c-black) !important;
+		}
+	}
 }
-.admin-panel [for="password"] span:hover,
-.admin-panel [for="password"] span.active {
-	transition: var(--trans-3);
-	color: var(--c-black) !important;
+.Login-Page {
+	form {
+		border-radius: 10px;
+    	box-shadow: 0px 0px 12px 1px #e2e2e2;
+	}
 }
-
-
-
-
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -368,7 +377,6 @@ nav a:not(.logo).active {
 		padding: 10px 30px !important;
 	}
 }
-
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -402,13 +410,13 @@ nav a:not(.logo).active {
 	}
 }
 
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	/* Spaces */
 	.sec-padd {
 		padding: 70px 0 40px;
 	}
+	/* Navbar */
 	nav .toggleBtn,
 	nav .backMenu {
 		display: none !important;
@@ -426,7 +434,7 @@ nav a:not(.logo).active {
 		color: var(--c-pink) !important;
 		position: relative;
 	}
-	nav a:not(.logo, nav .admin-panel-btn).active::after {
+	nav ul a:not(.logo, nav .admin-panel-btn).active::after {
 		position: absolute;
 		content: "";
 		height: 1px;
@@ -441,6 +449,10 @@ nav a:not(.logo).active {
 		border: none !important;
 		padding: 8px 12px !important;
 	}
+	nav ul .admin-panel-btn {
+		width: 100%;
+		margin-top: 0 !important;
+	} 
 	/* Fonts */
 	.fs-small {
 		font-size: 1rem;
@@ -481,12 +493,12 @@ nav a:not(.logo).active {
 		max-height: 90px;
 	}
 	/* About Page */
-.about-page .described-img {
-	margin-top: 2rem !important;
-}
-.about-page section img {
-	max-height: 450px;
-}
+	.about-page .described-img {
+		margin-top: 2rem !important;
+	}
+	.about-page section img {
+		max-height: 450px;
+	}
 }
 
 @media (min-width: 1200px) {

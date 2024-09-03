@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 import CollectionCard from "../components/CollectionCard";
 import HeaderDashed from "../components/HeaderDashed";
-import FetchErrorMsg from "../components/FetchErrorMsg";
+// import FetchErrorMsg from "../components/FetchErrorMsg";
 import FetchWaitingMsg from "../components/FetchWaitingMsg";
 
 

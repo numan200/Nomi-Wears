@@ -1,16 +1,14 @@
 import CollectionCard from "./CollectionCard";
-import FetchErrorMsg from "./FetchErrorMsg";
+// import FetchErrorMsg from "./FetchErrorMsg";
 import FetchWaitingMsg from "./FetchWaitingMsg";
 import HeaderDashed from "./HeaderDashed";
 
-const AllCollections = ({ data, loading, errorInFetch }) => {
-	console.log(data);
+const AllCollections = ({ data }) => {
+// const AllCollections = ({ data, errorInFetch }) => {
+	// console.log(data);
 	
 	return (
-		<section
-			id="all-collections"
-			className="col-12 col-md-8 col-lg-9 col-xxl-10"
-		>
+		<section id="all-collections">
 			<header className="d-flex justify-content-between align-items-center">
 				<HeaderDashed head1="ALL" head2="COLLECTIONS" />
 				
@@ -28,11 +26,10 @@ const AllCollections = ({ data, loading, errorInFetch }) => {
 			{/* Product display section */}
 			<section className="mt-3">
 				<div className="row row-gap-4">
-					{loading ? (
+					{!data.length ? (
 						<FetchWaitingMsg />                 // Show loading message
-					) : errorInFetch ? (
-						<FetchErrorMsg />                   // Show error message if fetch fails
-					) : (
+					)                  // Show error message if fetch fails
+					: (
 						data.map((product, i) => (
 							<div className="col-6 col-lg-4 col-xl-3" key={i}>
 								<CollectionCard data={product} />

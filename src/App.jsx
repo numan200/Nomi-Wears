@@ -22,6 +22,8 @@ import ShoppingCart from "./pages/ShoppingCart";
 // Importing hooks and animations
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import Login from "./pages/Login";
+
 
 function App() {
 	// Get current location
@@ -33,12 +35,10 @@ function App() {
 		window.scrollTo(0, 0);
 	}, [pathname]);
 
-
-
 	return (
 		<div className="App">
 			<Navbar />
-
+			
 			<AnimatePresence>
 				{/* Render routes with animations */}
 				<Routes location={location} key={location.pathname}>
@@ -47,6 +47,7 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/admin-panel" element={<AdminPanel />} />
+					<Route path="/login" element={<Login />} />
 					<Route path="/cart" element={<ShoppingCart />} />
 					<Route path="/products/:productId" element={<ProductDetails />} />
 					<Route path="*" element={<NotFound />} />

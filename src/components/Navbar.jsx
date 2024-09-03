@@ -2,10 +2,27 @@
 import logo from "../assets/logo.png";
 // Import React Router and React
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Tooltip } from "bootstrap"; 
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
+
+	useEffect(() => {
+		// Initialize Bootstrap tooltips
+		const tooltipTriggerList = document.querySelectorAll(
+			'[data-bs-toggle="tooltip"]'
+		);
+		const tooltipList = [...tooltipTriggerList].map(
+			(tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+		);
+
+		// Cleanup tooltips on component unmount
+		return () => {
+			tooltipList.forEach((tooltip) => tooltip.dispose());
+		};
+	}, []);
+
 	return (
 		<nav className="py-3">
 			<div className="container position-relative he-50 d-flex justify-content-between align-items-center">
@@ -65,7 +82,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							onClick={() => setShowMenu((prev) => !prev)}
-							className="admin-panel-btn btn  rounded-pill bg- text-decoration-none c-gray p-3 py-2 ms-1 d-block border-gray"
+							className="admin-panel-btn btn  rounded-pill mt-3 text-decoration-none c-gray p-3 py-2 d-block border-gray"
 							to="/admin-panel"
 						>
 							ADMIN PANEL
@@ -77,7 +94,10 @@ const Navbar = () => {
 				<div className="right d-flex align-items-center gap-1 gap-sm-3">
 					<div className="icons d-flex gap-1 gap-sm-3">
 						<i className="bx bx-search-alt-2 fs-little-big c-gray cursor"></i>
-						<i className="bx bx-user fs-little-big c-gray cursor"></i>
+						<NavLink className="login-link text-deoration-none" to="/login" data-bs-toggle="tooltip"
+						data-bs-placement="bottom" data-bs-title="Login">
+							<i className="bx bx-user fs-little-big c-gray cursor"></i>
+						</NavLink>
 						<button className="bg-transparent border-0 position-relative">
 							<i className="bx bx-shopping-bag fs-little-big c-gray cursor"></i>
 							<span className="bg-black d-block rounded-circle cart-icon c-white">
