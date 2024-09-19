@@ -87,8 +87,17 @@ li.c-light-gray:hover {
 .border-l-gray {
 	border: 1.5px solid var(--c-m-gray);
 }
+.border-ml-gray {
+	border: 1.5px solid var(--c-m-gray);
+}
+.border-ml-gray:focus {
+	border: 1.5px solid var(--c-gray);
+}
 .border-t-gray {
 	border-top: thin solid var(--c-m-gray);
+}
+.border-c-gray {
+	border-color: var(--c-m-gray) !important;
 }
 .outline-0 {
 	outline: 0;
@@ -121,6 +130,9 @@ ul {
 .py-203 {
 	padding-top: 0.85rem !important;
 	padding-bottom: 0.85rem !important;
+}
+.pt-405 {
+	padding-top: 2rem !important;
 }
 /* Fonts */
 .fs-tiny {
@@ -202,8 +214,11 @@ nav {
 		width: 98%;
 		height: 1px;
 		background-color: var(--c-m-gray);
-		bottom: -17px;
+		bottom: -11px;
 		left: 1%;
+	}
+	main .logo {
+		height: 40px;
 	}
 	ul {
 		transform: translateX(100%);
@@ -221,6 +236,10 @@ nav {
 	}
 	.login-link.active i {
 		color: var(--c-pink) !important;
+	}
+	.search-field input {
+		width: 100%;
+		max-width: 450px;
 	}
 }
 nav ul a.active {

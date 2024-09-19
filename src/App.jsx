@@ -29,11 +29,20 @@ function App() {
 	// Get current location
 	const location = useLocation();
 	const { pathname } = location;
-
+	
 	// Scroll to top on route change
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
+	
+	// const search = localStorage.getItem('activeSearch');
+	// useEffect(() => {
+		
+	// 	console.log(localStorage.getItem('activeSearch'));
+		
+		
+		
+	// }, [search]) 
 
 	return (
 		<div className="App">

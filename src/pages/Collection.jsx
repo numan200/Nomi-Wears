@@ -3,34 +3,26 @@ import { useEffect, useState } from "react";
 import FiltersSidebar from "../components/FiltersSidebar";
 import AllCollections from "../components/AllCollections";
 
-
 // Dummy Fixed Data:
 import productsData from "../components/FixedData";
 
-
 const Collection = () => {
-	// State to store fetched data
+	// State to store filtered data based on user selection
 	const [filteredData, setFilteredData] = useState([]);
-	// State to manage loading status
-	// const [loading, setLoading] = useState(true);
-	// State to handle fetch errors
-	// const [errorInFetch, setErrorInFetch] = useState(null);
 
+	// Function to filter products based on categories and types
 	const filterByData = ({categories, types}) => {
 		let newData = [...productsData];
 		if (categories.length) {
+			// Filter by selected categories
 			newData = newData.filter(el => categories.includes(el.category));
 		}
 		if (types.length) {
+			// Filter by selected subcategories (types)
 			newData = newData.filter(el => types.includes(el.subCategory));
 		}
-		
-
-		// newData = productsData.filter(el => filterBy.includes(el.category));
 		setFilteredData(newData);
 		console.log(newData);
-		
-		// console.log('from parent', filterData);
 	}
 
 
@@ -58,7 +50,7 @@ const Collection = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			className="collection-page py-3 pt-5"
+			className="collection-page py-3 pt-405"
 		>
 			<div className="container">
 				<div className="row row-gap-4">
@@ -69,7 +61,8 @@ const Collection = () => {
 					<div className="col-12 col-md-8 col-lg-9 col-xxl-10 position-relative">
 					{
 						filteredData.length?
-						<AllCollections data={ filteredData} />:
+						<AllCollections data={filteredData} />
+						:
 						<p className="nomatch-msg position-absolute top-50 start-50 fs-3 text-center">There are no data match your choice 🙄</p>
 					}
 						
