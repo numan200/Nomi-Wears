@@ -69,13 +69,16 @@ li.c-light-gray:hover {
 .c-mm-gray {
 	color: var(--c-mm-gray);
 }
+.c-pink {
+	color: var(--c-pink);
+}
 /* border */
 .border-05 {
 	border: thin solid #ccc;
 	border-radius: 3px;
 }
 .border-gray {
-	border: 1.5px solid #828282 !important;
+	border: 1.5px solid #828282;
 }
 .border-out-d-gray {
 	border: 1.5px solid var(--c-d-gray) !important;
@@ -102,7 +105,7 @@ li.c-light-gray:hover {
 .outline-0 {
 	outline: 0;
 }
-.box-shadow-gray:hover {
+.box-shadow-gray:not(.best-seller .box-shadow-gray):hover {
 	box-shadow: 0px 1px 7px 1px #bababa;
 }
 ul {
@@ -205,20 +208,32 @@ ul {
 .cursor {
 	cursor: pointer;
 }
+.hover-underline:hover {
+	text-decoration: underline !important;
+}
 
 /* Navbar Component */
 nav {
-	.container::before {
+	.container.showLine::before {
 		content: "";
-		position: absolute;
-		width: 98%;
-		height: 1px;
-		background-color: var(--c-m-gray);
-		bottom: -11px;
-		left: 1%;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: var(--c-m-gray);
+        bottom: -18px;
+        left: 0;
 	}
 	main .logo {
-		height: 40px;
+		/* height: 40px; */
+		width: 185px;
+	}
+	.logo:hover h3 {
+		transition: 0.2s;
+		color: var(--c-pink) !important;
+	}
+	.logo:hover h3 span {
+		transition: 0.2s;
+		color: var(--c-black) !important;
 	}
 	ul {
 		transform: translateX(100%);
@@ -237,10 +252,10 @@ nav {
 	.login-link.active i {
 		color: var(--c-pink) !important;
 	}
-	.search-field input {
-		width: 100%;
-		max-width: 450px;
-	}
+}
+.search-field input {
+	width: 80%;
+	max-width: 700px;
 }
 nav ul a.active {
 	background-color: var(--c-black);
@@ -257,9 +272,9 @@ nav ul a.active {
 }
 
 /* Footer Component */
-#footer .logo {
+/* #footer .logo {
 	width: 150px;
-}
+} */
 #footer a.active {
 	color: var(--c-black) !important;
 	font-weight: bold;
@@ -312,7 +327,8 @@ nav ul a.active {
 }
 
 /* ProductDetails Page */
-.size-btns span:hover {
+.size-btns span:hover,
+.size-btns span.active {
 	background-color: var(--c-gray) !important;
 	color: var(--c-white) !important;
 }
@@ -322,8 +338,7 @@ nav ul a.active {
 .samples img {
 	border: 1px solid transparent;
 }
-.samples img.active,
-.select-size span.active {
+.samples img.active {
 	border-color: var(--c-orange) !important;
 }
 
@@ -456,7 +471,7 @@ nav ul a.active {
 	nav ul a:not(.logo, nav .admin-panel-btn).active::after {
 		position: absolute;
 		content: "";
-		height: 1px;
+		height: 1.5px;
 		width: 40%;
 		background-color: var(--c-pink);
 		bottom: -1px;
@@ -524,6 +539,14 @@ nav ul a.active {
 	/* Fonts */
 	.fs-09 {
 		font-size: 1rem;
+	}
+	nav main .logo,
+	#footer .logo {
+		width: 220px
+	}
+	nav main .logo h3 {
+		/* height: 40px; */
+		font-size: 1.5rem !important;
 	}
 	/* Collection Card Component */
 	.latest-collections .collection-card,

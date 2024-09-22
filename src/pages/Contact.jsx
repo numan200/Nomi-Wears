@@ -36,12 +36,12 @@ const Contact = () => {
 								<div className="telephone">
 									Tel: (415) 555-0132
 									<br />
-									Email: admin@forever.com
+									Email: admin@algohary-shop.com
 								</div>
 							</div>
 							{/* Careers Information */}
 							<div className="careers mt-5">
-								<h4 className="c-d-gray">Careers at Forever</h4>
+								<h4 className="c-d-gray">Careers at Algohary Shop</h4>
 								<span className="d-block my-4">
 									Learn more about our teams and job openings.
 								</span>

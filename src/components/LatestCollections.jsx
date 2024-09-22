@@ -1,9 +1,15 @@
 import HeaderDashed from "./HeaderDashed";
-import FetchWaitingMsg from "./FetchWaitingMsg";
-import FetchErrorMsg from "./FetchErrorMsg";
+// import FetchWaitingMsg from "./FetchWaitingMsg";
+// import FetchErrorMsg from "./FetchErrorMsg";
 import CollectionCard from "./CollectionCard";
+import { ShopContext } from "../context/ShopContext";
+import { memo, useContext } from "react";
 
-const LatestCollections = ({ data, loading, errorInFetch }) => {
+const LatestCollections = () => {
+	const {productsData} = useContext(ShopContext);
+	console.log(productsData);
+	
+
 	return (
 		<section className="latest-collections mt-6">
 			{/* Header with title and description */}
@@ -14,23 +20,25 @@ const LatestCollections = ({ data, loading, errorInFetch }) => {
 			/>
 			<main className="d-flex row-gap-3 flex-wrap mt-5">
 				{/* Conditional rendering based on loading and error states */}
-				{loading ? (
-					<FetchWaitingMsg />
-				) : errorInFetch ? (
-					<FetchErrorMsg />
-				) : (
+				{
+				// loading ? (
+				// 	<FetchWaitingMsg />
+				// ) : errorInFetch ? (
+				// 	<FetchErrorMsg />
+				// ) : (
 					// Sort data by id and display the first 10 items
-					data.sort((a,b) => {
-						a = a.id;
-						b = b.id;
-						return a > b? 1 : a < b? -1 : 0
+					productsData.sort((a,b) => {
+						a = a.date;
+						b = b.date;
+						return b - a
 					}).slice(0,10).map((product) => (
 							<CollectionCard key={product._id} data={product} />
 						))
-				)}
+				// )
+				}
 			</main>
 		</section>
 	);
 };
 
-export default LatestCollections;
+export default memo(LatestCollections);

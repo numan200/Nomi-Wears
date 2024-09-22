@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
 
-const FiltersSidebar = ({ filterByData }) => {
+const  FiltersSidebar = ({ filterByData }) => {
 	// State to show/hide category filter (for small screens)
 	const [showCategory, setShowCategory] = useState(false);       
 	// State for selected categories and types
 	const [activeCategories, setActiveCategories] = useState([]);
 	const [activeTypes, setActiveTypes] = useState([]);
+	const {search} = useContext(ShopContext)
 
 	// Trigger filter function whenever categories or types change
 	useEffect(() => {
 		filterByData({categories: activeCategories, types: activeTypes});
-	}, [activeCategories, activeTypes])
+	}, [activeCategories, activeTypes, search])
 
 	// Toggle selected categories
 	const manageActiveCategories = (e) => {

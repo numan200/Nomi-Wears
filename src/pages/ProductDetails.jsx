@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 import CollectionCard from "../components/CollectionCard";
@@ -9,13 +9,15 @@ import FetchWaitingMsg from "../components/FetchWaitingMsg";
 
 
 // Dummy Fixed Data:
-import productsData from "../components/FixedData";
+// import productsData from "../components/FixedData";
 
 
 import { motion } from "framer-motion";
+import { ShopContext } from "../context/ShopContext";
 
 const ProductDetails = () => {
 	const {productId} = useParams();
+	const {productsData} = useContext(ShopContext);
 	// ;
 	// useEffect(() => console.log(productId), [productId])
 	
@@ -25,26 +27,26 @@ const ProductDetails = () => {
 	// const [fetchingError, setFetchingError] = useState(null);
 	const [activeSize, setActiveSize] = useState(null);
 	const [activeImage, setActiveImage] = useState(0);
-	const [allFetchedData, setAllFetchedData] = useState([]);
+	// const [allFetchedData, setAllFetchedData] = useState([]);
 	
 	useEffect(() => {
 		console.log(productsData[0].image[0]);
 		
-		setAllFetchedData(productsData);  // all products
+		// setAllFetchedData(productsData);  // all products
 		let data = productsData.find(obj => obj._id == productId);
 		data = {...data, rating: {stars: 4.5, count: 122}};
 		setProductData(data);             // the selected product
 		setLoading(false);
-	}, [productId]);
+	}, [productId, productsData]);
 
 
 	// Function to find related products based on category
 	const findRelatedProducts = () => {
-		if (!productData || !allFetchedData.length) {
+		if (!productData || !productsData.length) {
 			return <h1 className="text-center my-5">Loading...</h1>;
 		}
 		
-		const relatedProducts = allFetchedData.filter(
+		const relatedProducts = productsData.filter(
 			(product) =>
 				product.category === productData.category && product._id != productData._id
 		);
@@ -207,7 +209,7 @@ const ProductDetails = () => {
 							<li className="py-2 px-4 border-gray fw-bold border-bottom-0 active">
 								Description
 							</li>
-							<li className="py-2 px-4 border-gray border-bottom-0">
+							<li className="py-2 px-4 border-gray border-start-0 border-bottom-0">
 								Reviews ({productData.rating.count})
 							</li>
 						</ul>

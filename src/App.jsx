@@ -18,18 +18,23 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails";
 import ShoppingCart from "./pages/ShoppingCart";
+import PlaceOrder from "./pages/PlaceOrder";
+import Orders from "./pages/Orders";
 
 // Importing hooks and animations
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Login from "./pages/Login";
+import SearchBar from "./components/SearchBar";
+import { ShopContext } from "./context/ShopContext";
 
 
 function App() {
 	// Get current location
 	const location = useLocation();
 	const { pathname } = location;
-	
+	const {activeSearch} = useContext(ShopContext);
+
 	// Scroll to top on route change
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -47,6 +52,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
+			{activeSearch && <SearchBar />}
 			
 			<AnimatePresence>
 				{/* Render routes with animations */}
@@ -59,6 +65,8 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/cart" element={<ShoppingCart />} />
 					<Route path="/products/:productId" element={<ProductDetails />} />
+					<Route path="/place-order" element={<PlaceOrder />} />
+					<Route path="/orders" element={<Orders />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</AnimatePresence>

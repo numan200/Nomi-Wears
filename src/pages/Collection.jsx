@@ -1,18 +1,24 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FiltersSidebar from "../components/FiltersSidebar";
 import AllCollections from "../components/AllCollections";
+import { ShopContext } from "../context/ShopContext";
 
 // Dummy Fixed Data:
-import productsData from "../components/FixedData";
+// import productsData from "../components/FixedData";
 
 const Collection = () => {
+	const {productsData, search} = useContext(ShopContext)
 	// State to store filtered data based on user selection
 	const [filteredData, setFilteredData] = useState([]);
 
 	// Function to filter products based on categories and types
 	const filterByData = ({categories, types}) => {
 		let newData = [...productsData];
+		if (search !== '') {
+			newData = newData.filter(el => el.name.toLowerCase().includes(search.toLowerCase()))
+		}
+
 		if (categories.length) {
 			// Filter by selected categories
 			newData = newData.filter(el => categories.includes(el.category));
@@ -24,7 +30,6 @@ const Collection = () => {
 		setFilteredData(newData);
 		console.log(newData);
 	}
-
 
 
 	// Fetch data on component mount

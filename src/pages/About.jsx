@@ -24,7 +24,7 @@ const About = () => {
 				sideText={					
 					<>
 					<p>
-						Forever was born out of a passion for innovation and a desire to
+						Algohary Shop was born out of a passion for innovation and a desire to
 						revolutionize the way people shop online. Our journey began with a
 						simple idea: to provide a platform where customers can easily
 						discover, explore, and purchase a wide range of products from the
@@ -41,7 +41,7 @@ const About = () => {
 					<div className="mission">
 						<h4 className="my-3 mt-4 c-black">Our Mission</h4>
 						<p className="mb-0">
-							Our mission at Forever is to empower customers with choice,
+							Our mission at Algohary Shop is to empower customers with choice,
 							convenience, and confidence. We&rsquo;re dedicated to providing a
 							seamless shopping experience that exceeds expectations, from
 							browsing and ordering to delivery and beyond.

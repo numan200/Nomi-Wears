@@ -1,18 +1,26 @@
-// Import Image
-import logo from "../assets/logo.png";
 // Import React Router and React
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "bootstrap"; 
+import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
-	const [activeSearch, setActiveSearch] = useState(false)
-
+	
+	const [showBorder, setShowBorder] = useState(true);
+	const [showSearchIcon, setSearchIcon] = useState(false);
+	const {setActiveSearch} = useContext(ShopContext);
+	
+	const path = window.location.pathname
 	// useEffect(() => {
 	// 	localStorage.setItem('activeSearch', activeSearch);
 	// 	// console.log(localStorage.getItem('activeSearch'));
 	// }, [activeSearch]) 
+
+	useEffect(() => {
+		setShowBorder(path !== "/");
+		setSearchIcon(path === "/collection")
+	}, [path])
 
 	useEffect(() => {
 		// Initialize Bootstrap tooltips
@@ -30,13 +38,13 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className="py-203">
-			<div className="container position-relative  d-flex justify-content-between align-items-center flex-column">
+		<nav className="py-3">
+			<div className={`container position-relative  d-flex justify-content-between align-items-center flex-column ${showBorder? 'showLine' : ''}`}>
 				<main className="col-12 d-flex justify-content-between align-items-center">
 				{/* Logo */}
-				<NavLink to="" className="logo">
-					<img src={logo} className="h-100" alt="logo" />
-				</NavLink>
+				<Link to="/" className="logo text-decoration-none text-dark">
+					<h3 className="fs-5 mb-0">Algohary <span className="fw-medium c-pink">Shop</span></h3>
+				</Link>
 
 				{/* Mobile Menu */}
 				<ul
@@ -100,7 +108,9 @@ const Navbar = () => {
 				{/* Right Side Icons */}
 				<div className="right d-flex align-items-center gap-1 gap-sm-3">
 					<div className="icons d-flex gap-1 gap-sm-3">
-						<i className="bx bx-search-alt-2 fs-little-big c-gray cursor" onClick={() => setActiveSearch(true)}></i>
+						{showSearchIcon && 
+							<i className="bx bx-search-alt-2 fs-little-big c-gray cursor" onClick={() => setActiveSearch(true)}></i>
+						}
 						<NavLink className="login-link text-deoration-none" to="/login" data-bs-toggle="tooltip"
 						data-bs-placement="bottom" data-bs-title="Login">
 							<i className="bx bx-user fs-little-big c-gray cursor"></i>
@@ -121,12 +131,6 @@ const Navbar = () => {
 					</button>
 				</div>
 				</main>
-				{activeSearch && 
-				<div className="search-field border-top border-c-gray col-12 d-flex justify-content-center align-items-center pt-3 pb-2 mt-2">
-					<input type="text" className="rounded-pill border-ml-gray outline-0 p-2 px-3" placeholder="Search" />
-					<i className='bx bx-x fs-2 p-2 cursor c-gray' onClick={() => setActiveSearch(false)}></i>
-				</div>
-				}
 			</div>
 		</nav>
 	);

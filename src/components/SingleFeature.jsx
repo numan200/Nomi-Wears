@@ -1,4 +1,4 @@
-const SingleFeature = ({ img, classLayout }) => {
+const SingleFeature = ({ img, classLayout, head, text }) => {
 	return (
 		<article
 			className={`d-flex flex-column gap-2 align-items-center ${classLayout}`}
@@ -9,10 +9,10 @@ const SingleFeature = ({ img, classLayout }) => {
 			<img src={img} alt="Easy Exchange" className="col-1 col-lg-2" />
 
 			{/* Feature Title */}
-			<h4 className="mt-2 mb-0 fw-bold">Easy Exchange Policy</h4>
+			<h4 className="mt-2 mb-0 fw-bold">{head}</h4>
 
 			{/* Feature Description */}
-			<p className="c-gray">We offer hassle free exchange policy</p>
+			<p className="c-gray">{text}</p>
 		</article>
 	);
 };
