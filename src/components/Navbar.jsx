@@ -107,7 +107,7 @@ const Navbar = () => {
 
 				{/* Right Side Icons */}
 				<div className="right d-flex align-items-center gap-1 gap-sm-3">
-					<div className="icons d-flex gap-1 gap-sm-3">
+					{/* <div className="icons d-flex gap-1 gap-sm-3">
 						{showSearchIcon && 
 							<i className="bx bx-search-alt-2 fs-little-big c-gray cursor" onClick={() => setActiveSearch(true)}></i>
 						}
@@ -121,7 +121,7 @@ const Navbar = () => {
 								0
 							</span>
 						</button>
-					</div>
+					</div> */}
 					<button
 						onClick={() => setShowMenu((prev) => !prev)}
 						className="px-0 toggleBtn bg-transparent border-0"

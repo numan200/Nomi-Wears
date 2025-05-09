@@ -10,7 +10,7 @@ const CollectionCard = ({data: { _id, image, name, price }, classPadding}) => {
 
 	return (
 		<div
-			className={`collection-card trans-3 p-2 border-0 card box-shadow-gray cursor ${classPadding}`}
+			className={`collection-card trans-3 p-2 border-1 card box-shadow-black border-rounded cursor ${classPadding}`}
 			onClick={() => navigate(`/products/${_id}`)}                  // Navigate to product details on click
 			data-aos={"fade-up"}
 		>
@@ -23,7 +23,7 @@ const CollectionCard = ({data: { _id, image, name, price }, classPadding}) => {
 			</figure>
 			<article className="card-body text-start p-0">
 				<h4 className="card-title fs-6 c-gray fw-normal">{name}</h4>
-				<div className="price fw-bold fs-small c-d-gray">{price}{currency}</div>
+				<div className="price fw-bold fs-small c-d-gray">{currency} {price}</div>
 			</article>
 		</div>
 	);

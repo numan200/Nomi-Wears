@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import HeaderDashed from "../components/HeaderDashed";
 import mainImg from "../assets/about_img.png";
-import SubscriptionForm from "../components/SubscriptionForm";
+// import SubscriptionForm from "../components/SubscriptionForm";
 import DescribedImage from "../components/DescribedImage";
 
 const About = () => {
@@ -24,7 +24,7 @@ const About = () => {
 				sideText={					
 					<>
 					<p>
-						Algohary Shop was born out of a passion for innovation and a desire to
+						Nomi Wears was born out of a passion for innovation and a desire to
 						revolutionize the way people shop online. Our journey began with a
 						simple idea: to provide a platform where customers can easily
 						discover, explore, and purchase a wide range of products from the
@@ -33,15 +33,18 @@ const About = () => {
 						<br />
 						Since our inception, we&rsquo;ve worked tirelessly to curate a diverse
 						selection of high-quality products that cater to every taste and
-						preference. From fashion and beauty to electronics and home
-						essentials, we offer an extensive collection sourced from trusted
-						brands and suppliers.
+						preference. From fashion and beauty to advertising you brand,
+						 we offer an extensive collection sourced from trusted
+						brands and suppliers.We provide all kind of printing advertising like
+						 printed Shirts,Caps,Mugs,keychains and a lot of other stuff. We also
+						  provide some product as a wholesale.
+
 					</p>
 					{/* Mission statement */}
 					<div className="mission">
 						<h4 className="my-3 mt-4 c-black">Our Mission</h4>
 						<p className="mb-0">
-							Our mission at Algohary Shop is to empower customers with choice,
+							Our mission at Nomi Wears is to empower customers with choice,
 							convenience, and confidence. We&rsquo;re dedicated to providing a
 							seamless shopping experience that exceeds expectations, from
 							browsing and ordering to delivery and beyond.
@@ -87,7 +90,7 @@ const About = () => {
 				</section>
 
 				{/* Subscription form for users */}
-				<SubscriptionForm />
+				{/* <SubscriptionForm /> */}
 			</div>
 		</motion.div>
 	);

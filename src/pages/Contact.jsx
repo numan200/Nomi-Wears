@@ -27,20 +27,66 @@ const Contact = () => {
 						<>
 							{/* Store Information */}
 							<div className="our-store">
-								<h3 className="c-d-gray">Our Store</h3>
-								<address className="my-4">
-									<span>54709 Willms Station</span>
-									<br />
-									<span>Suite 350, Washington, USA</span>
-								</address>
-								<div className="telephone">
-									Tel: (415) 555-0132
-									<br />
-									Email: admin@algohary-shop.com
-								</div>
+							
+								<div className="address col-12 col-lg  text-center">
+							
+							<ul className="d-flex flex-column align-items-center align-items-lg-start ps-0 gap-2">
+								<li className="c-gray"> <h4>Tel: +92 370 7049014 </h4></li>
+								<li className="c-gray"> <h4>Whatsapp: 0370 7049014 </h4></li>
+								<li>
+									<a
+										className="c-gray text-decoration-none  hover-underline"
+										href="mailto:ahmedmaher.dev1@gmail.com"
+										title="get in touch"
+									>
+									  <h4> Email: xyz90official@gmail.com </h4>
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/nomi-wears-609915268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+										target="_blank"
+										title="Go To LinkedIn"
+										className="text-decoration-none c-gray"
+									>
+										<h4>LinkedIn</h4>	
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/nomiwears?utm_source=qr&igsh=MW1jdXc5bGVvYjc1Yw%3D%3D"
+										target="_blank"
+										title="Go To Instagram"
+										className="text-decoration-none c-gray"
+									>
+										<h4>Instagram</h4>									
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.facebook.com/share/1AKcBKarbG/"
+										target="_blank"
+										title="Go To Facebook"
+										className="text-decoration-none c-gray"
+									>
+										<h4>Facebook</h4>
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.tiktok.com/@nomiwears?_t=ZS-8wCxLINmHDj&_r=1"
+										target="_blank"
+										title="Go To Tiktok"
+										className="text-decoration-none c-gray"
+									>
+										<h4>Tiktok</h4> 
+									</a>
+								</li>
+							</ul>
+						</div>
 							</div>
 							{/* Careers Information */}
-							<div className="careers mt-5">
+							{/* <div className="careers mt-5">
 								<h4 className="c-d-gray">Careers at Algohary Shop</h4>
 								<span className="d-block my-4">
 									Learn more about our teams and job openings.
@@ -48,13 +94,13 @@ const Contact = () => {
 								<button className="btn py-3 px-4 border-out-d-gray rounded-0">
 									Explore Jobs
 								</button>
-							</div>
+							</div> */}
 						</>
 					}
 				/>
 
 				{/* Subscription Form */}
-				<SubscriptionForm />
+				{/* <SubscriptionForm /> */}
 			</div>
 		</motion.div>
 	);
