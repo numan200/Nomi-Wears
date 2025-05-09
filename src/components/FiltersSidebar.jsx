@@ -69,7 +69,7 @@ const  FiltersSidebar = ({ filterByData }) => {
 					<li>
 						<input type="checkbox" name="category" id="kids" value="Kids" onClick={manageActiveCategories} aria-label="Kids category" />
 						<label className="ps-2 mt-1 fw-light" htmlFor="kids">
-							Kids
+							Avertising products
 						</label>
 					</li>
 				</ul>
@@ -86,21 +86,40 @@ const  FiltersSidebar = ({ filterByData }) => {
 					<li>
 						<input type="checkbox" name="type" id="topwear" value="Topwear" onClick={manageActiveTypes} aria-label="Topwear type" />
 						<label className="ps-2 mt-1 fw-light" htmlFor="topwear">
-							Topwear
+							Caps
 						</label>
 					</li>
 					<li>
 						<input type="checkbox" name="type" id="bottomwear" value="Bottomwear" onClick={manageActiveTypes} aria-label="Bottomwear type" />
 						<label className="ps-2 mt-1 fw-light" htmlFor="bottomwear">
-							Bottomwear
+						   t-shirt
 						</label>
 					</li>
 					<li>
 						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
 						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
-							Winterwear
+							polo shirt
 						</label>
 					</li>
+					<li>
+						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
+							Mugs
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
+							pens
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
+							keychains
+						</label>
+					</li>
+					
 				</ul>
 			</div>
 		</aside>

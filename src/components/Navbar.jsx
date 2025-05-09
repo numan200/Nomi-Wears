@@ -43,7 +43,7 @@ const Navbar = () => {
 				<main className="col-12 d-flex justify-content-between align-items-center">
 				{/* Logo */}
 				<Link to="/" className="logo text-decoration-none text-dark">
-					<h3 className="fs-5 mb-0">Algohary <span className="fw-medium c-pink">Shop</span></h3>
+					<h3 className="fs-5 mb-0">Nomi <span className="fw-medium c-pink">Wears</span></h3>
 				</Link>
 
 				{/* Mobile Menu */}
@@ -94,7 +94,7 @@ const Navbar = () => {
 							CONTACT
 						</NavLink>
 					</li>
-					<li>
+					{/* <li>
 						<NavLink
 							onClick={() => setShowMenu((prev) => !prev)}
 							className="admin-panel-btn btn  rounded-pill mt-3 text-decoration-none c-gray p-3 py-2 d-block border-gray"
@@ -102,7 +102,7 @@ const Navbar = () => {
 						>
 							ADMIN PANEL
 						</NavLink>
-					</li>
+					</li> */}
 				</ul>
 
 				{/* Right Side Icons */}

@@ -1,4 +1,4 @@
-import p_img1 from '../assets/p_img1.png'
+import p_img1 from '../assets/Punjab-t-shirt.png'
 import p_img2_1 from '../assets/p_img2_1.png'
 import p_img2_2 from '../assets/p_img2_2.png'
 import p_img2_3 from '../assets/p_img2_3.png'
@@ -58,13 +58,13 @@ import p_img52 from '../assets/p_img52.png'
 const productsData = [
     {
         "_id": "aaaaa",
-        "name": "Women Round Neck Cotton Top",
-        "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        "price": 100,
+        "name": "Men roundneck cotton t-shirt",
+        "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an t-shirt or outer garment.",
+        "price": 1000,
         image: [p_img1],
-        "category": "Women",
+        "category": "Men",
         "subCategory": "Topwear",
-        "sizes": ["S", "M", "L"],
+        "sizes": ["S", "M","L","XL"],
         "date": 1716634345448,
         "bestseller": true
     },

@@ -4,7 +4,7 @@ import productsData from "../components/FixedData";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-	const currency = "$";
+	const currency ="  Rs.";
 	const delivery_fee = 10;
     const [activeSearch, setActiveSearch] = useState(false);
     const [search, setSearch] = useState('');
