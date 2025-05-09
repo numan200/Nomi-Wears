@@ -38,14 +38,12 @@ const Footer = () => {
 						<article className="col-12 col-lg-6 text-center">
 							<Link to="/" className="logo text-decoration-none text-dark">
 								<h3 className="fs-3 mb-0">
-									Algohary <span className="fw-medium c-pink">Shop</span>
+									Nomi <span className="fw-medium c-pink">Wears</span>
 								</h3>
 							</Link>
 							<p className="mt-3">
-								Lorem Ipsum is simply dummy text of the printing and typesetting
-								industry. Lorem Ipsum has been the industry&apos;s standard
-								dummy text ever since the 1500s, when an unknown printer took a
-								galley of type and scrambled it to make a type specimen book.
+								We provide all kind of printing advertising like printed Shirts,Caps,
+								Mugs,keychains and a lot of other stuff. We also provide some product as a wholesale.
 							</p>
 						</article>
 
@@ -69,8 +67,14 @@ const Footer = () => {
 										About us
 									</NavLink>
 								</li>
-								<li className="c-gray p-1">Delivery</li>
-								<li className="c-gray p-1">Privacy Policy</li>
+								<li>
+									<NavLink
+										to="/Contact"
+										className="text-decoration-none c-gray d-inline-block p-1 px-5"
+									>
+										Contact us
+									</NavLink>
+								</li>
 							</ul>
 						</div>
 
@@ -78,24 +82,54 @@ const Footer = () => {
 						<div className="address col-12 col-lg text-center">
 							<h3 className="mb-3">GET IN TOUCH</h3>
 							<ul className="d-flex flex-column align-items-center align-items-lg-start ps-0 gap-2">
-								<li className="c-gray">+1-000-000-0000</li>
+								<li className="c-gray">+92 370 7049014</li>
 								<li>
 									<a
 										className="c-gray text-decoration-none hover-underline"
 										href="mailto:ahmedmaher.dev1@gmail.com"
 										title="get in touch"
 									>
-										ahmedmaher.dev1@gmail.com
+										xyz90official@gmail.com
 									</a>
 								</li>
 								<li>
 									<a
-										href="https://www.linkedin.com/in/ahmed-maher-algohary"
+										href="https://www.linkedin.com/in/nomi-wears-609915268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 										target="_blank"
 										title="Go To LinkedIn"
 										className="text-decoration-none c-gray"
 									>
-										LinkedIn
+										LinkedIn	
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/nomiwears?utm_source=qr&igsh=MW1jdXc5bGVvYjc1Yw%3D%3D"
+										target="_blank"
+										title="Go To Instagram"
+										className="text-decoration-none c-gray"
+									>
+										Instagram									
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.facebook.com/share/1AKcBKarbG/"
+										target="_blank"
+										title="Go To Facebook"
+										className="text-decoration-none c-gray"
+									>
+										Facebook
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.tiktok.com/@nomiwears?_t=ZS-8wCxLINmHDj&_r=1"
+										target="_blank"
+										title="Go To Tiktok"
+										className="text-decoration-none c-gray"
+									>
+										Tiktok 
 									</a>
 								</li>
 							</ul>
@@ -107,14 +141,14 @@ const Footer = () => {
 				<div className="copyrights border-t-gray mt-5 pt-4 col-12 text-center c-d-gray">
 					Copyright @{currentYear}
 					<a
-						href="https://www.linkedin.com/in/ahmed-maher-algohary"
+						href="https://www.linkedin.com/in/nomi-wears-609915268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 						target="_blank"
 						title="Go To LinkedIn"
 						className="text-decoration-none c-black p-2 fw-bold"
 						data-bs-toggle="tooltip"
 						data-bs-placement="top"
 					>
-						Ahmed Maher
+						Nomi-Wears
 					</a>
 					- All Rights Reserved.
 				</div>
