@@ -114,14 +114,12 @@ const Navbar = () => {
 						<NavLink className="login-link text-deoration-none" to="/login" data-bs-toggle="tooltip"
 						data-bs-placement="bottom" data-bs-title="Login">
 							<i className="bx bx-user fs-little-big c-gray cursor"></i>
-						</NavLink>
-						<button className="bg-transparent border-0 position-relative">
-							<i className="bx bx-shopping-bag fs-little-big c-gray cursor"></i>
-							<span className="bg-black d-block rounded-circle cart-icon c-white">
-								0
-							</span>
-						</button>
-					</div> */}
+						</NavLink> */}
+						{/* <button className="bg-transparent border-0 position-relative"> */}
+							{/* <i className="bx bx-shopping-bag fs-little-big c-gray cursor"></i> */}
+							
+						{/* </button> */}
+					{/* </div> */}
 					<button
 						onClick={() => setShowMenu((prev) => !prev)}
 						className="px-0 toggleBtn bg-transparent border-0"

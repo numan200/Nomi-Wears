@@ -59,9 +59,9 @@ const Home = () => {
 				
 				<BestSeller />
 				
-				<Features />
+				{/* <Features /> */}
 
-				<SubscriptionForm />
+				{/* <SubscriptionForm /> */}
 			</div>
 		</motion.section>
 	);
