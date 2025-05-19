@@ -153,16 +153,16 @@ const ProductDetails = () => {
 											) => (
 												<i
 													key={i}
-													className={`bx bxs-star ${
-														productData.rating.stars >= i + 1 ? "active" : ""
-													}`}
+													// className={`bx bxs-star ${
+													// 	productData.rating.stars >= i + 1 ? "active" : ""
+													// }`}
 												></i>
 											)
 										)}
-									<span className="ms-2">({productData.rating.count})</span>
+									{/* <span className="ms-2">({productData.rating.count})</span> */}
 								</div>
 								<span className="fw-bold fs-2 d-block mb-3">
-									&#x24;{productData.price}
+									Rs. {productData.price}
 								</span>
 							</div>
 							{/* Product Description */}
@@ -188,46 +188,23 @@ const ProductDetails = () => {
 								</div>
 							</div>
 							{/* Add to Cart Button */}
-							<button className="addcart-btn btn rounded-0 bg-black c-white mt-4 trans-3 mb-2 py-2 px-4">
+							{/* <button className="addcart-btn btn rounded-0 bg-black c-white mt-4 trans-3 mb-2 py-2 px-4">
 								ADD TO CART
-							</button>
+							</button> */}
 							{/* Product Description and Reviews */}
 							<ul className="features ps-0 mt-4 border-top pt-3">
 								<li className="mb-1">100% Original product.</li>
 								<li className="mb-1">
 									Cash on delivery is available on this product.
 								</li>
-								<li className="mb-1">
+								{/* <li className="mb-1">
 									Easy return and exchange policy within 7 days.
-								</li>
+								</li> */}
 							</ul>
 						</article>
 					</main>
 					{/* Product Description and Reviews */}
-					<article className="description d-flex flex-column mt-6 mb-6">
-						<ul className="d-flex ps-0 mb-0">
-							<li className="py-2 px-4 border-gray fw-bold border-bottom-0 active">
-								Description
-							</li>
-							<li className="py-2 px-4 border-gray border-start-0 border-bottom-0">
-								Reviews ({productData.rating.count})
-							</li>
-						</ul>
-						<div className="description-text border-gray p-3 c-gray">
-							An e-commerce website is an online platform that facilitates the
-							buying and selling of products or services over the internet. It
-							serves as a virtual marketplace where businesses and individuals
-							can showcase their products, interact with customers, and conduct
-							transactions without the need for a physical presence. <br />
-							<br />
-							E-commerce websites have gained immense popularity due to their
-							convenience, accessibility, and the global reach they offer.
-							E-commerce websites typically display products or services along
-							with detailed descriptions, images, prices, and any available
-							variations (e.g., sizes, colors). Each product usually has its own
-							dedicated page with relevant information.
-						</div>
-					</article>
+					{/* <article */}
 					{/* Related Products */}
 					<div className="related-products  mt-5">
 						<HeaderDashed

@@ -16,7 +16,7 @@ const LatestCollections = () => {
 			<HeaderDashed
 				head1="LATEST"
 				head2="COLLECTIONS"
-				paragraph="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
+				paragraph="Our newly launch product is here."
 			/>
 			<main className="d-flex row-gap-3 flex-wrap mt-5">
 				{/* Conditional rendering based on loading and error states */}

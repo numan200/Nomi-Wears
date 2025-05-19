@@ -27,7 +27,7 @@ const  FiltersSidebar = ({ filterByData }) => {
 	}
 
 	return (
-		<aside className="filters-sidebar col-12 col-md-4 col-lg-3 col-xxl-2">
+		<aside className="filters-sidebar c-white col-12 col-md-4 col-lg-3 col-xxl-2">
 			{/* Toggle button for small screens */}
 			<h3
 				className="small-screen fw-normal fs-4 d-flex align-items-center gap-2 fit-content p-2 trans-3 rounded"
@@ -52,24 +52,24 @@ const  FiltersSidebar = ({ filterByData }) => {
 					showCategory ? "d-block" : "d-none"
 				}`}
 			>
-				<h4 className="fs-6 mb-205">CATEGORIES</h4>
-				<ul className="list-unstyled mb-0">
-					<li>
-						<input type="checkbox" name="category" id="men" value="Men" onClick={manageActiveCategories} aria-label="Men category" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="men">
+				<h4 className="fs-6 c-white mb-205">CATEGORIES</h4>
+				<ul className="list-unstyled c-white mb-0">
+					{/* <li>
+						<input type="checkbox" name="category" id="Men" value="Men" onClick={manageActiveCategories} aria-label="Men category" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Men">
 							Men
 						</label>
-					</li>
+					</li> */}
 					<li>
-						<input type="checkbox" name="category" id="women" value="Women" onClick={manageActiveCategories} aria-label="Women category" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="women">
-							Women
+						<input type="checkbox" name="category" id="Plain" value="Plain" onClick={manageActiveCategories} aria-label="Plain category" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Plain">
+							Plain
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="category" id="kids" value="Kids" onClick={manageActiveCategories} aria-label="Kids category" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="kids">
-							Avertising products
+						<input type="checkbox" name="category" id="Printed" value="Printed" onClick={manageActiveCategories} aria-label="Printed category" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Printed">
+							Printed
 						</label>
 					</li>
 				</ul>
@@ -81,41 +81,53 @@ const  FiltersSidebar = ({ filterByData }) => {
 					showCategory ? "d-block" : "d-none"
 				}`}
 			>
-				<h4 className="fs-6 mb-205">TYPE</h4>
-				<ul className="list-unstyled mb-0">
+				<h4 className="fs-6 c-white mb-205">TYPE</h4>
+				<ul className="list-unstyled c-white mb-0">
 					<li>
-						<input type="checkbox" name="type" id="topwear" value="Topwear" onClick={manageActiveTypes} aria-label="Topwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="topwear">
+						<input type="checkbox" name="type" id="Caps" value="Caps" onClick={manageActiveTypes} aria-label="Caps type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Caps">
 							Caps
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="type" id="bottomwear" value="Bottomwear" onClick={manageActiveTypes} aria-label="Bottomwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="bottomwear">
+						<input type="checkbox" name="type" id="t-shirt" value="t-shirt" onClick={manageActiveTypes} aria-label="t-shirt type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="t-shirt">
 						   t-shirt
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
-							polo shirt
+						<input type="checkbox" name="type" id="polo-shirt" value="polo-shirt" onClick={manageActiveTypes} aria-label="polo-shirt type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="polo-shirt">
+							polo-shirt
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
+						<input type="checkbox" name="type" id="Mugs" value="Mugs" onClick={manageActiveTypes} aria-label="Mugs type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Mugs">
 							Mugs
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
-							pens
+						<input type="checkbox" name="type" id="Cards" value="Cards" onClick={manageActiveTypes} aria-label="Cards type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Cards">
+							Cards
 						</label>
 					</li>
 					<li>
-						<input type="checkbox" name="type" id="winterwear" value="Winterwear" onClick={manageActiveTypes} aria-label="Winterwear type" />
-						<label className="ps-2 mt-1 fw-light" htmlFor="winterwear">
+						<input type="checkbox" name="type" id="Approns" value="Approns" onClick={manageActiveTypes} aria-label="Approns type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Approns">
+							Approns
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="type" id="Water-Bottle" value="Water-Bottle" onClick={manageActiveTypes} aria-label="Water-Bottle type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="Water-Bottle">
+							Water-Bottle
+						</label>
+					</li>
+					<li>
+						<input type="checkbox" name="type" id="keychains" value="keychains" onClick={manageActiveTypes} aria-label="keychains type" />
+						<label className="ps-2 mt-1 fw-light" htmlFor="keychains">
 							keychains
 						</label>
 					</li>

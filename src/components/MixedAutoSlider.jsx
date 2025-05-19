@@ -1,18 +1,19 @@
 // Import Slider Images
-import slide_1_img from "../assets/slide-1.jpg";
-import slide_2_img from "../assets/slide-2.jpg";
-import slide_3_img from "../assets/slide-3.jpg";
-import slide_4_img from "../assets/slide-4.jpg";
-import slide_5_img from "../assets/alide-5.jpg";
-import slide_6_img from "../assets/slide-6.jpg";
-import slide_7_img from "../assets/slide-7.jpg";
-import slide_8_img from "../assets/slide-8.jpg";
-import slide_9_img from "../assets/slide-9.jpg";
-import slide_10_img from "../assets/slide-10.jpg";
+import slide_1_img from "../assets/nomiwear-5panel-cap.png";
+import slide_2_img from "../assets/nomiwear-black-appron.png";
+import slide_3_img from "../assets/nomiwear-black-mug3.png";
+import slide_4_img from "../assets/nomiwear-black.png";
+import slide_5_img from "../assets/nomiwear-bottle.png";
+import slide_6_img from "../assets/nomiwear-card-front.png";
+import slide_7_img from "../assets/nomiwear-face-gray-cap.png";
+import slide_8_img from "../assets/nomiwear-polo.png";
+import slide_9_img from "../assets/nomiwear-skin-appron.png";
+import slide_10_img from "../assets/nomiwear-skin-tshirt.png";
+import slide_11_img from "../assets/nomiwearpolo.png";
 import { useEffect, useState } from "react";
 
 const MixedAutoSlider = () => {
-	const sliderImages = [slide_9_img, slide_7_img, slide_8_img, slide_1_img, slide_2_img, slide_3_img, slide_4_img, slide_5_img, slide_6_img, slide_10_img];
+	const sliderImages = [slide_9_img, slide_7_img, slide_8_img, slide_1_img, slide_2_img, slide_3_img, slide_4_img, slide_5_img, slide_6_img, slide_10_img, slide_11_img];
 	const [activeSlide, setActiveSlide] = useState(0);
 
 	// Auto-slide functionality for the image slider
@@ -27,25 +28,25 @@ const MixedAutoSlider = () => {
 	}, [sliderImages.length]);
 
 	return (
-		<section className="mixed-slider">
+		<section className="mixed-slider my-5 ">
 			{/* Map through images to create slides */}
-			<div className="border-05 p-0 overflow-hidden flex-wrap d-flex">
+			<div className="border-05 p-0 overflow-hidden flex-wrap rounded-5  d-flex">
 				{/* Text section for the current slide */}
 				<article className="text py-5 m-auto col-12 col-md-6">
 					<div className="fit-content m-auto">
 						<header className="d-flex align-items-center gap-2 ">
 							<span className="fw-bold line-span bg-gray"></span>
-							<span className="fw-bold c-gray">OUR BESTSELLERS</span>
+							<span className="fw-bold c-gray">Printed Advertisment with</span>
 						</header>
-						<h2 className="playflair-font fs-big my-3 playflair-l-font">
-							Latest Arrivals
+						<h2 className="playflair-font fs-big my-3 c-white playflair-l-font">
+							Customized design
 						</h2>
 						<footer className="d-flex align-items-center gap-2 ">
 							<button
 								className="btn fit-content fw-bold c-gray p-0"
 								role="button"
 							>
-								SHOP NOW
+								Order Now
 							</button>
 							<span className="fw-bold line-span bg-gray"></span>
 						</footer>
